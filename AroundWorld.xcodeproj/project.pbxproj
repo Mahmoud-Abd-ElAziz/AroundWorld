@@ -58,6 +58,11 @@
 			path = AroundWorldUITests;
 			sourceTree = "<group>";
 		};
+		E248AA802E0D83E400C7D9F0 /* Screenshots */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		E248A9942E0CCC9000C7D9F0 = {
 			isa = PBXGroup;
 			children = (
+				E248AA802E0D83E400C7D9F0 /* Screenshots */,
 				E248A99F2E0CCC9000C7D9F0 /* AroundWorld */,
 				E248A9AD2E0CCC9200C7D9F0 /* AroundWorldTests */,
 				E248A9B72E0CCC9200C7D9F0 /* AroundWorldUITests */,
@@ -122,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				E248A99F2E0CCC9000C7D9F0 /* AroundWorld */,
+				E248AA802E0D83E400C7D9F0 /* Screenshots */,
 			);
 			name = AroundWorld;
 			packageProductDependencies = (

@@ -36,7 +36,8 @@ struct PlaceCardView: View {
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .minimumScaleFactor(0.9)
-
+                .padding(.horizontal, 12)
+            
             HStack {
                 Image(systemName: "eye")
                 Text("\(place.viewsNo ?? 0)")
@@ -46,6 +47,7 @@ struct PlaceCardView: View {
             }
             .font(.subheadline)
             .foregroundColor(.gray)
+            .padding(12)
         }
         .background(Color.white)
         .cornerRadius(16)

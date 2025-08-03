@@ -19,7 +19,7 @@ struct HomeView: View {
     private var topPadding: CGFloat {
         UIApplication.shared.windows.first?.safeAreaInsets.top ?? 8
     }
-
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -68,12 +68,34 @@ struct HomeView: View {
 
 private struct HomeSearchBar: View {
     @ObservedObject var vm: HomeViewModel
+    @State private var isNavigatingToSettings: Bool = false
+
     var body: some View {
-        SearchBarView(
-            text: $vm.searchText,
-            onSearch: { Task { await vm.search() } },
-            onClear: { vm.clearSearch() }
-        )
+        HStack {
+            Button {
+                isNavigatingToSettings.toggle()
+            }label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .fill(.gray.opacity(0.1))
+                        .frame(width: 40, height: 40)
+                    
+                    Image(systemName: "slider.horizontal.2.square")
+                        .foregroundColor(.gray)
+                        .padding(4)
+                }
+            }
+            .padding(.leading, 8)
+            
+            SearchBarView(
+                text: $vm.searchText,
+                onSearch: { Task { await vm.search() } },
+                onClear: { vm.clearSearch() })
+        }.sheet(isPresented: $isNavigatingToSettings) {
+            SettingView()
+                .presentationDragIndicator(.visible)
+                .presentationDetents([.medium, .large])
+        }
     }
 }
 

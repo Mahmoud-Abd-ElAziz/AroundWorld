@@ -78,10 +78,13 @@ struct SettingView: View {
                               linkDestination: "https://www.linkedin.com/in/mahmoud-abd-elaziz-707a1316a/")
                 
     
-                
+                Text("Around Egypt is designed to showcase the beauty and diversity of Egypt's landscapes, culture, and history. It aims to provide users with a comprehensive guide to the most breathtaking places in Egypt, making it easier for them to explore and appreciate the country's rich heritage.")
+                    .font(.subheadline)
+                    .foregroundColor(.brown)
+                    .padding(.horizontal)
+                    .padding(.top, 8)
                 
             }.multilineTextAlignment(.leading)
-            
         }//:List
     }
     
